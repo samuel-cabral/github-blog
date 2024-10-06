@@ -1,5 +1,6 @@
 import { formatDistanceToNow } from 'date-fns'
 import { Container, Title, Summary, PostInfo } from './styles'
+import { ptBR } from 'date-fns/locale'
 
 interface PostCardProps {
   title: string
@@ -11,6 +12,7 @@ interface PostCardProps {
 export function PostCard({ title, body, createdAt, number }: PostCardProps) {
   const formattedDate = formatDistanceToNow(new Date(createdAt), {
     addSuffix: true,
+    locale: ptBR,
   })
 
   return (
