@@ -1,30 +1,108 @@
-# React + TypeScript + Vite
+# Github Blog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based web application for displaying and interacting with GitHub-related content.
 
-Currently, two official plugins are available:
+## Technologies Used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React
+- TypeScript
+- Vite
+- Styled Components
+- React Router DOM
+- FontAwesome
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Prerequisites
 
-- Configure the top-level `parserOptions` property like this:
+- Node.js (v14 or later recommended)
+- pnpm (preferred package manager)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/your-username/github-blog.git
+   cd github-blog
+   ```
+
+2. Install dependencies:
+   ```
+   pnpm install
+   ```
+
+### Running the Application
+
+To start the development server:
+
+```
+pnpm dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+The application will be available at `http://localhost:5173`.
+
+### Building for Production
+
+To create a production build:
+
+```
+pnpm build
+```
+
+The built files will be in the `dist` directory.
+
+## Project Structure
+
+- `src/`: Source code
+  - `components/`: Reusable React components
+  - `pages/`: Page components
+  - `layouts/`: Layout components
+  - `styles/`: Global styles and theme definitions
+  - `@types/`: TypeScript type definitions
+- `public/`: Static assets
+
+## Styling
+
+This project uses Styled Components for styling. The global styles and theme are defined in `src/styles/`.
+
+## Routing
+
+React Router is used for routing. The main routes are defined in `src/Router.tsx`.
+
+## Develop the project
+
+This project is a challenge to create a blog application using GitHub's API. The main features include:
+
+1. Displaying your GitHub profile information (image, number of followers, name, etc.)
+2. Listing and filtering issues from a repository with a brief summary of their content
+3. Creating a page to display a full post (issue)
+
+To develop this project, you'll need to:
+
+1. Create a public GitHub repository where you'll create issues that will serve as blog posts.
+2. Use the following GitHub APIs:
+   - [GitHub Users API](https://docs.github.com/pt/rest/users/users#get-a-user)
+   - [GitHub Search API](https://docs.github.com/pt/rest/search)
+   - [GitHub Issues API](https://docs.github.com/pt/rest/issues/issues#get-an-issue)
+
+3. Implement dynamic routing using react-router-dom to display full post pages.
+4. Use the `useParams` hook from react-router-dom to fetch specific issue data.
+5. Format the markdown content of issues to HTML using a library like [react-markdown](https://github.com/remarkjs/react-markdown).
+
+Note: Be aware of GitHub API rate limits. You can increase your limit by configuring a private key.
+
+Key concepts to remember:
+
+- Fetch / Axios for API calls
+- React Router DOM for routing
+- Form handling
+
+Follow the provided layout in the attached images for the application's design.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
